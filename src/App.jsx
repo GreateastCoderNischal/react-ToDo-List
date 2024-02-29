@@ -9,7 +9,7 @@ function App() {
 
   const saveToLS = () => {
     localStorage.setItem('tasks', JSON.stringify(list));
-    console.log('has been saved');
+
   };
   useEffect(() => {
     let todo = localStorage.getItem('tasks');
