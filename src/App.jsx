@@ -13,16 +13,16 @@ function App() {
   };
   useEffect(() => {
     let todo = localStorage.getItem('tasks');
-    console.log(todo);
+
     if (todo) {
       setlist(JSON.parse(localStorage.getItem('tasks')));
     }
   }, []);
 
   function Save() {
-    console.log('clicked');
+    
     if (value != '') {
-      console.log('wrong');
+ 
       setlist((prev) => [...prev, { name: value, isCompleted: false }]);
     }
     saveToLS();
@@ -32,7 +32,7 @@ function App() {
     setlist((lst) => {
       const new_list = [...lst];
       let elm = new_list[index];
-      console.log(elm);
+      
       new_list[index] = {
         name: elm.name,
         isCompleted: !elm.isCompleted,
