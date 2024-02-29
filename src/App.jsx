@@ -53,6 +53,7 @@ function App() {
 
     let new_list = list.filter((object) => object.name != name);
     setlist(new_list);
+      saveToLS();
   }
   return (
     <>
@@ -67,13 +68,17 @@ function App() {
                 name="Name"
                 onValue={(val) => {
                   setValue(val);
+                    saveToLS();
                 }}
                 value={value}
               />
               <InputBox name="Description" />
             </div>
             <div className="mt-3">
-              <button onClick={() => Save()} className="button bg-purple-200">
+              <button onClick={() => {
+      Save()
+                saveToLS();
+              }} className="button bg-purple-200">
                 Save
               </button>
             </div>
